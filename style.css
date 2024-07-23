@@ -148,6 +148,7 @@ ul{
 }
 .btn:hover{
     transform: scale(1.10);
+    filter: drop-shadow(0 0 10px #ee1221);
 }
 .shadow-dark{
     box-shadow: 0 0 20px rgba(48, 46,77, 0.15);
@@ -338,6 +339,7 @@ h3.my-proffesion{
     text-align: center;
     position: relative;
     padding: 15px;
+    filter: drop-shadow(1px 1px 20px white);
 }
 .home .home-img::after{
     content: '';
@@ -612,7 +614,9 @@ max-width: 50%;
 
 .portfolio .container{
     padding-bottom: 40px;
+    border-radius: 50px;
 }
+
 .portfolio .portfolio-heading{
     flex: 0 0 100%;
     max-width: 100%;
@@ -621,23 +625,28 @@ max-width: 50%;
 .portfolio .portfolio-heading h2{
     color: var(--text-black-900);
     font-weight: 500;
+
 }
 .portfolio .portfolio-item{
     flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 30px;
+    border-radius: 50px;
 }
 .portfolio .portfolio-item-inner{
     border: 6px solid var(--bg--black-100);
-    border-radius: 10px;
+    border-radius: 50px;
     cursor: pointer;
     position: relative;
     width: 100%;
+
 }
 .portfolio-img img{
   width: 99%;
   height: 270px;
   display: block;
+  box-shadow: 1px 1px 30px #fbf554;
+  border-radius: 50px;
 }
 .portfolio .portfolio-img h1{
     color: black;
@@ -669,6 +678,7 @@ max-width: 50%;
     overflow: hidden;
     height: 0;
     transition: 0.5s ease;
+    border-radius: 20px;
 }
 .portfolio-item-inner:hover .overlay{
     height: 70%;
@@ -727,7 +737,7 @@ max-width: 50%;
 }
 
 /* form new */
-.form-container {
+        .form-container {
             padding: 20px 40px;
             border-radius: 8px;
             box-shadow: shadow-dark;
@@ -737,8 +747,9 @@ max-width: 50%;
         }
         .form-container h2 {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             color: var(--skin-color);
+            text-transform: capitalize;
         }
         .form-container form {
             display: block;
@@ -746,9 +757,10 @@ max-width: 50%;
             
         }
         .form-group label {
-            margin-bottom: 10px;
+          
             font-weight: bold;
             color: var(--skin-color);
+            
         }
         .form-group textarea {
             resize: none;
@@ -809,6 +821,7 @@ max-width: 50%;
     .aside .nav-toggler.open
     {
           left: 300px;
+          position: fixed;
     }
     .section
     {
@@ -868,8 +881,8 @@ max-width: 50%;
     .contact .media,
     .contact .media-buttons,
     .about-content .personal-info{
-        flex: 0 0  100%;
-        max-width: 100%;
+        flex: 0 0  50%;
+        max-width: 50%;
     }   
     .home .home-img,
     .home-info {
@@ -887,10 +900,57 @@ max-width: 50%;
         height: auto;
         width: 100%;
     }
-    
+    .section{
+        position:relative;
+        
+    }
     
     
 }
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+    and (orientation: portrait) {
+    
+
+    .about-section,
+    .contact .contact-info-item,
+    .contact .form-container,
+    .service .service-item,
+    .portfolio .portfolio-item,
+    .about-content .education,
+    .about-content .experience,
+    .about-content .skill,
+    .contact .media,
+    .contact .media-buttons,
+    .about-content .personal-info{
+        flex: 1 1  100%;
+        max-width: 100%;
+    } 
+        .home .home-info{
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+        .home .home-img
+        {
+            display: flex;
+            flex: wrap;
+            flex-shrink: calc(50%);
+        }
+        .section{
+           
+            position: relative;
+        }
+        .aside {
+            display: flex;
+        
+            
+        }
+        
+        
+        
+    }
+
 /* media ended */
 
 .contact .media {
